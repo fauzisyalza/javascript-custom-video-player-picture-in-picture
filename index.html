@@ -1,0 +1,76 @@
+<style>
+*,html,body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.btn{
+    border: none;
+    padding: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 15;
+    border-radius: 8px;
+}
+.container{
+    max-width: 50%;
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+}
+video{
+    display: block;
+    width: 100%;
+    border: 5px solid black;
+}
+.video-component{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    padding: 12px 12px;
+}
+.btn-play{
+    background-color: rgb(231, 37, 37);
+    color: white;
+}
+.btn-minimize{
+    background-color: black;
+    color: white;
+}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show video</title>
+</head>
+<body>
+    <div class="container">
+        <video width="675">
+            <source src="assets/Teh Pucuk Harum Segerin Dimana Aja.mp4">
+        </video>
+        <div class="video-component">
+            <button onclick="play()" class="btn btn-play">PLAY</button>
+            <button onclick="pause()" class="btn btn-pause">PAUSE</button>
+            <button onclick="minimize()" class="btn btn-minimize">MINIMIZE</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    const videoComponent = document.querySelector("video")
+    function play() {
+        console.log('playing')
+        videoComponent.play()
+    }
+    function pause() {
+        console.log('pause')
+        videoComponent.pause()
+    }
+    function minimize() {
+        console.log('minimize')
+        videoComponent.requestPictureInPicture()
+    }
+</script>
+</html>
